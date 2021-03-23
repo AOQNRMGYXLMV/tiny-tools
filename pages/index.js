@@ -14,9 +14,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout style={{ height: '100vh' }}>
-        <Header>
-          <h1 style={{ color: 'white' }}>这是一个小工具网站</h1>
-        </Header>
+        <header style={{ boxShadow: '0 2px 8px #f0f1f2' }}>
+          <h1 style={{ color: 'white', background: '#434343', padding: 15 }}>这是一个小工具网站</h1>
+        </header>
         <Layout>
           <Sider width={200}>
             <Menu

@@ -34,7 +34,7 @@ export default function FetchCover() {
         size="large"
         onSearch={onSearch}
       />
-      {url && <div>{url}</div>}
+      {url && <Button type="primary"><a href={url} target="_blank">点击打开封面</a></Button>}
       {url && <Image src={url} width={300} height={300} />}
     </div>
   )

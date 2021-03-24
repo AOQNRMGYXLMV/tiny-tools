@@ -5,23 +5,14 @@ import Image from 'next/image'
 export default function FetchCover() {
   const [loading, setLoading] = useState(false)
   const [url, setUrl] = useState('')
-  if (typeof window === 'undefined') {
-    console.log("I'm in server side.")
-  } else {
-    console.log("I'm in client side.")
-  }
+
   const onSearch = value => {
     fetch(`/api/fetch_cover?article=${value}`).then(res => res.json()).then(data => {
       return new Promise(resolve => {
-        const reg = /http:.*jpeg/
-        const m = data.url.match(reg)
-        console.log('data: ', m[0])
-        setUrl(m[0])
+        console.log('data: ', data)
+        setUrl(data.url)
         resolve()
       })
-      // console.log('data', typeof data)
-      // const m = data.match(reg)
-      // console.log('m = ', m[0])
     })
   }
 

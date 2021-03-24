@@ -12,8 +12,10 @@ export default async (req, res) => {
         const m = data.match(reg)
         if (m != null) {
           console.log('find cover url: ', m[0])
+          let url = m[0].substr(15);
+          url = url.slice(0, -1)
 
-          res.status(200).json({ url: m ? m[0] : null })
+          res.status(200).json({ url })
           resolve()
         } else {
           console.log('cover url not found.')
